@@ -1,0 +1,12 @@
+.console__string {
+  display: flex;
+  align-items: start;
+  gap: 4px;
+  .console__arrow {
+    width: 20px;
+    height: 20px;
+  }
+  .console__text {
+    word-break: break-word;
+  }
+}

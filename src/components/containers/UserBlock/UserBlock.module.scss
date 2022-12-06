@@ -1,0 +1,17 @@
+@import '../../../assets/styles/variables';
+
+.user__block {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border: 1px solid $console-green;
+  width: max-content;
+  padding: 10px;
+  border-radius: 8px;
+  & > div {
+    font-size: 12px;
+  }
+}

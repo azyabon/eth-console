@@ -1,0 +1,42 @@
+.console__type {
+  display: flex;
+  align-items: start;
+  gap: 4px;
+  .console__hint {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    animation-name: flashing;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    .console__arrow {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .console__input {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    min-height: 100%;
+    resize: none;
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  }
+}
+
+@keyframes flashing {
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  0% {
+    opacity: 0;
+  }
+}

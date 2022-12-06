@@ -1,0 +1,11 @@
+@import '../../../assets/styles/variables';
+
+.page__layout {
+  position: relative;
+  border-width: 2px;
+  border-style: solid;
+  padding: 0 10px;
+  height: 100%;
+  width: 100%;
+  border-image: linear-gradient(to bottom, $console-green, $console-green-opacity) 1 100%;
+}
