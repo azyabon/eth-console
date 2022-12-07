@@ -9,7 +9,7 @@ type Props = {
 export const PageLayout = ({ children }: Props) => {
   return (
     <div className={classes.page__layout}>
-      <UserBlock />
+      {/*<UserBlock />*/}
       {children}
     </div>
   );
