@@ -13,6 +13,9 @@ export const console = createSlice({
     addString: (state, action: PayloadAction<ConsoleItem>) => {
       state.consoleList = [...state.consoleList, action.payload];
     },
+    clearConsole: (state, action: PayloadAction<ConsoleItem>) => {
+      state.consoleList = [];
+    },
   },
 });
 

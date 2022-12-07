@@ -2,12 +2,13 @@ import React, { useRef, useState } from "react";
 import classes from "./ConsoleType.module.scss";
 import consoleArrow from "../../../assets/img/next.png";
 import { useActions } from "../../../hooks/useActions";
+import { print } from "../../../libs";
 
 export const ConsoleType = () => {
   const textRef = useRef<HTMLInputElement | null>(null);
   const [text, setText] = useState("");
   // const [currentHeight, setCurrentHeight] = useState(0);
-  const { addString } = useActions();
+  const actions = useActions();
 
   // const resize = () => {
   //   if (currentHeight === +textRef.current?.scrollHeight!!) {
@@ -24,12 +25,14 @@ export const ConsoleType = () => {
 
   const addItem = (event: any) => {
     if (event.key === "Enter") {
-      const data = {
-        id: Date.now(),
-        isSystem: false,
-        text: textRef.current?.value!!,
-      };
-      addString(data);
+      print(
+        {
+          id: Date.now(),
+          isSystem: false,
+          text: textRef.current?.value!,
+        },
+        actions
+      );
       setText("");
     }
   };
