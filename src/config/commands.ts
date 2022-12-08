@@ -5,4 +5,5 @@ export const COMMANDS = {
   balance: "/balance",
   wallet: "/wallet",
   clear: "/clear",
+  send: "/send",
 };

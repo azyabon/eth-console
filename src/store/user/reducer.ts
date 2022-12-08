@@ -6,6 +6,7 @@ const initialState: IInitialState = {
     id: null,
     address: "",
     balance: null,
+    fullBalance: null,
   },
 };
 

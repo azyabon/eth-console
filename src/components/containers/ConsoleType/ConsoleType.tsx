@@ -3,12 +3,14 @@ import classes from "./ConsoleType.module.scss";
 import consoleArrow from "../../../assets/img/next.png";
 import { useActions } from "../../../hooks/useActions";
 import { print } from "../../../libs";
+import { useTypedSelector } from "../../../hooks/useTypedSelector";
 
 export const ConsoleType = () => {
   const textRef = useRef<HTMLInputElement | null>(null);
   const [text, setText] = useState("");
   // const [currentHeight, setCurrentHeight] = useState(0);
   const actions = useActions();
+  const { userData } = useTypedSelector((state) => state.user);
 
   // const resize = () => {
   //   if (currentHeight === +textRef.current?.scrollHeight!!) {
@@ -31,7 +33,8 @@ export const ConsoleType = () => {
           isSystem: false,
           text: textRef.current?.value!,
         },
-        actions
+        actions,
+        userData
       );
       setText("");
     }
@@ -40,12 +43,12 @@ export const ConsoleType = () => {
   return (
     <div className={classes.console__type}>
       <div className={classes.console__hint}>
+        <span>go:</span>
         <img
           src={consoleArrow}
           alt="arrow"
           className={classes.console__arrow}
         />
-        <span>commands:</span>
       </div>
       {/*<textarea*/}
       {/*  onChange={(event) => {*/}

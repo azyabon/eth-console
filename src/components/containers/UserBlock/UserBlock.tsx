@@ -2,9 +2,9 @@ import classes from "./UserBlock.module.scss";
 import { connect, shorter, disconnect } from "../../../libs";
 import { useTypedSelector } from "../../../hooks/useTypedSelector";
 import { useActions } from "../../../hooks/useActions";
+import { Copy } from "../../ui/Copy/Copy";
 
 export const UserBlock = () => {
-  //TODO: сделать дропдаун и засунуть в хедер по нормальному
   const { userData } = useTypedSelector((state) => state.user);
   const { setUser } = useActions();
 
@@ -15,7 +15,10 @@ export const UserBlock = () => {
           <div className={classes.user__balance}>
             Balance: {userData.balance} ETH
           </div>
-          <div>Wallet: {shorter(userData.address)}</div>
+          <div>
+            Wallet:{" "}
+            <Copy text={shorter(userData.address)} copy={userData.address} />
+          </div>
           <div
             className={classes.user__profile}
             onClick={() => {
