@@ -9,4 +9,10 @@ export const routes = [
       async () => await import("../components/pages/Console/Console")
     ),
   },
+  {
+    path: URLS.CONVERT_PAGE,
+    element: lazy(
+      async () => await import("../components/pages/Convert/Convert")
+    ),
+  },
 ];

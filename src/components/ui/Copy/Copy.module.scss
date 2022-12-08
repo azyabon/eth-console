@@ -1,0 +1,21 @@
+@import '../../../assets/styles/variables';
+
+.copy {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  & > svg {
+    cursor: pointer;
+  }
+  .copy__notification {
+    position: absolute;
+    right: -90px;
+    background-color: #181818;
+    border: 1px solid $console-green;
+    padding: 5px;
+    border-radius: 8px;
+    font-size: 10px;
+  }
+}

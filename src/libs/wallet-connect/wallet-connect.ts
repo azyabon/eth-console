@@ -2,7 +2,10 @@ import { ethers } from "ethers";
 import { IUser } from "../../store/user";
 // import { NETWORK } from "../../config/networks";
 
-const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
+export const provider = new ethers.providers.Web3Provider(
+  window.ethereum,
+  "any"
+);
 
 export const connect = async (setUser: (data: IUser) => void) => {
   if (window.ethereum) {
@@ -19,7 +22,8 @@ export const connect = async (setUser: (data: IUser) => void) => {
     setUser({
       id: Date.now(),
       address,
-      balance: balance.toFixed(5),
+      balance: balance ? balance.toFixed(5) : 0,
+      fullBalance: balance,
     });
   } else {
     console.log("MetaMask is not detected");
@@ -28,5 +32,5 @@ export const connect = async (setUser: (data: IUser) => void) => {
 
 export const disconnect = async (setUser: (data: IUser) => void) => {
   localStorage.removeItem("wallet");
-  setUser({ id: null, address: "", balance: null });
+  setUser({ id: null, address: "", balance: null, fullBalance: null });
 };
