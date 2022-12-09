@@ -8,22 +8,9 @@ import { useTypedSelector } from "../../../hooks/useTypedSelector";
 export const ConsoleType = () => {
   const textRef = useRef<HTMLInputElement | null>(null);
   const [text, setText] = useState("");
-  // const [currentHeight, setCurrentHeight] = useState(0);
   const actions = useActions();
   const { userData } = useTypedSelector((state) => state.user);
-
-  // const resize = () => {
-  //   if (currentHeight === +textRef.current?.scrollHeight!!) {
-  //     return;
-  //   }
-  //
-  //   // @ts-ignore
-  //   textRef.current.style.height = `${
-  //     +textRef.current?.style.height.slice(0, -2)!! +
-  //     +textRef.current?.scrollHeight!!
-  //   }px`;
-  //   setCurrentHeight(textRef.current?.scrollHeight!!);
-  // };
+  const { transaction } = useTypedSelector((state) => state.console);
 
   const addItem = (event: any) => {
     if (event.key === "Enter") {
@@ -34,7 +21,8 @@ export const ConsoleType = () => {
           text: textRef.current?.value!,
         },
         actions,
-        userData
+        userData,
+        transaction
       );
       setText("");
     }
@@ -50,19 +38,8 @@ export const ConsoleType = () => {
           className={classes.console__arrow}
         />
       </div>
-      {/*<textarea*/}
-      {/*  onChange={(event) => {*/}
-      {/*    resize();*/}
-      {/*    setText(event.target.value);*/}
-      {/*  }}*/}
-      {/*  ref={textRef}*/}
-      {/*  value={text}*/}
-      {/*  className={classes.console__input}*/}
-      {/*  onKeyDown={addItem}*/}
-      {/*/>*/}
       <input
         onChange={(event) => {
-          // resize();
           setText(event.target.value);
         }}
         ref={textRef}
