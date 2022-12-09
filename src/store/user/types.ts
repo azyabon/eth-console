@@ -5,6 +5,12 @@ export interface IUser {
   fullBalance: number | null;
 }
 
+export interface ITransaction {
+  from: string;
+  to: string;
+  value: string;
+}
+
 export interface IInitialState {
   userData: IUser;
 }

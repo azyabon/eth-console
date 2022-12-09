@@ -1,6 +1,5 @@
 import { ethers } from "ethers";
 import { IUser } from "../../store/user";
-// import { NETWORK } from "../../config/networks";
 
 export const provider = new ethers.providers.Web3Provider(
   window.ethereum,
@@ -14,10 +13,6 @@ export const connect = async (setUser: (data: IUser) => void) => {
     let balance: any = await provider.getBalance(address);
     balance = +ethers.utils.formatEther(balance);
     localStorage.setItem("wallet", address);
-
-    // window.ethereum.on("disconnect", () => {
-    //   console.log(1);
-    // });
 
     setUser({
       id: Date.now(),

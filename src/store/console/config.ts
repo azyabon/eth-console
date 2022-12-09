@@ -1,6 +1,4 @@
-import { ConsoleItem } from "./types";
-
-export const OPENING: ConsoleItem[] = [
+export const OPENING = [
   {
     id: 1,
     isSystem: true,
@@ -28,7 +26,6 @@ export const OPENING: ConsoleItem[] = [
 ];
 
 export const HELP = {
-  id: 5,
   isSystem: true,
   text:
     "/help - will display all possible print. \n " +
@@ -41,51 +38,60 @@ export const HELP = {
 };
 
 export const CONNECT = {
-  id: 6,
   isSystem: true,
   text: "You are connected :)",
 };
 
 export const DISCONNECT = {
-  id: 7,
   isSystem: true,
   text: "You are disconnected :(",
 };
 export const SEND_AMOUNT = {
-  id: 8,
   isSystem: true,
   text: "Enter the amount you want to send:",
 };
 
 export const SEND_WALLET = {
-  id: 9,
   isSystem: true,
   text: "Enter the wallet to which you want to transfer:",
 };
 
 export const SEND_AMOUNT_ERROR = {
-  id: 10,
   isSystem: true,
   text:
-    "There are not enough funds in your account! \n" + "Operation canceled.",
+    "/*/*/*/*/*/*/*/*/*/*/*/*/ \n" +
+    "Enter the amount correctly! \n" +
+    "Operation canceled. \n" +
+    "/*/*/*/*/*/*/*/*/*/*/*/*/",
 };
 
 export const SEND_WALLET_ERROR = {
-  id: 11,
   isSystem: true,
-  text: "You can't send yourself! \n" + "Operation canceled.",
+  text:
+    "/*/*/*/*/*/*/*/*/*/*/ \n" +
+    "Wrong address! \n" +
+    "Operation canceled. \n" +
+    "/*/*/*/*/*/*/*/*/*/*/",
 };
 
 export const NOT_AUTH = {
-  id: 12,
   isSystem: true,
   text: "Сonnect wallet to use this command.",
 };
 
 export const META_NOT_INSTALLED = {
-  id: 13,
   isSystem: true,
   text: "We can't detect your wallet, you need to install it.",
+};
+
+export const TRANSACTION_FAILED = {
+  isSystem: true,
+  text: "Something went wrong, the transaction was aborted :(",
+};
+
+export const TRANSACTION_SUCCESS = {
+  isSystem: true,
+  text: "Something went wrong, the transaction was aborted :(",
 };
 
 export const BALANCE = (balance: number) => `Your full balance ${balance}`;
